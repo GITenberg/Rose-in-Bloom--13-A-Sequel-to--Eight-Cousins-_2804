@@ -1,0 +1,38 @@
+_repo: Rose-in-Bloom--13-A-Sequel-to--Eight-Cousins-_2804
+_version: 0.0.1
+creator:
+  author:
+    agent_name: Alcott, Louisa May
+    aliases:
+    - Barnard, A. M.
+    - Alcott, L. M. (Louisa May)
+    - Alcott, Louisa M. (Louisa May)
+    birthdate: 1832
+    deathdate: 1888
+    gutenberg_agent_id: '102'
+    url: http://www.gutenberg.org/2009/agents/102
+    wikipedia: http://en.wikipedia.org/wiki/Louisa_May_Alcott
+description: "Rose in Bloom, by Louisa May Alcott, depicts the story of a nineteenth-century\
+  \ girl, Rose Campbell, finding her way in society. It is Alcott's sequel to Eight\
+  \ Cousins.\n From Wikipedia (CC BY-SA)."
+gutenberg_bookshelf: Children's Literature
+gutenberg_issued: '2001-09-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '2804'
+  wikidata: Q7368002
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcc 'PS'
+- !lcsh 'Orphans -- Fiction'
+- !lcsh 'Family life -- Fiction'
+- !lcsh 'Cousins -- Fiction'
+- GITenberg
+title: "Rose in Bloom\r\nA Sequel to \"Eight Cousins\""
+url: http://www.gutenberg.org/ebooks/2804
+wikipedia:
+- https://simple.wikipedia.org/wiki/Rose_in_Bloom
+- https://en.wikipedia.org/wiki/Rose_in_Bloom
