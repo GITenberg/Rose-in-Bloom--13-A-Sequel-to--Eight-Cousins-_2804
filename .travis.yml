@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: TxbIRMJkRQMppuhU16y4EUycrCU+jWdJ4TZfDK8hm9OD1X8YUFgysGfhmWEUVatLj3ylJm96FyjdddVmmVmkMQR1Nh1WaO+usWcwNgOwLx439cmFz8jQBhyVSWnKf/henZecvRR3USc0CaPEMU24FFJQQvYU9CJfV8ELeQDrN4gTvczbzX4IzsGGkf2dCMOa6gEXH+cqSFBLCx9ZPzX/hXUBbRn8GfDjkSISUxLgZ6+gNWBUjFBhdy5JHYvJuleB5LiiBZutZNcGsiXeowxUmS9qV6GHRKVriD2A9ZYpLF93i/RWK+veXGX4egLnPLNIsn9pQ+PDzy89+8z2Atdhoy4TrXRhpi8jgSjKJm+c4l36/B8kRukWaJNJDNM6r7GfCe2aVb2V+PpEGCr6HsKUw2J3sW6fJW0Ncx16mCdM5us1ml9rXVRzwnoJOD2Z58crdA7a9WxnSaMUNs8/RypeoHXdBfsPGapAJwjjAlH9msPcohrKuMBWiWExiiQtjaqUoMmQripbT3M4cqL+/koDEyPd14pPCKAOmED/h0RNxaA21mv3w+iJ56OAjIu89E8Ql+5BaBD0PEoEGcC+pY4Nyx/3PrEfTbqPVkjfo/GAVu2d6jkti9x7WGzlJjS/eb84aHg0JwUYv1db/y/Y/xh+tZHo4pa//6+Ag35YPEQydso=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/Rose-in-Bloom--13-A-Sequel-to--Eight-Cousins-_2804
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
