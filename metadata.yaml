@@ -1,5 +1,8 @@
 _repo: Rose-in-Bloom--13-A-Sequel-to--Eight-Cousins-_2804
-_version: 0.1.0
+_version: 0.2.0
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Alcott, Louisa May
@@ -15,6 +18,8 @@ creator:
 description: "Rose in Bloom, by Louisa May Alcott, depicts the story of a nineteenth-century\
   \ girl, Rose Campbell, finding her way in society. It is Alcott's sequel to Eight\
   \ Cousins.\n From Wikipedia (CC BY-SA)."
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/2804#Rose-in-Bloom--13-A-Sequel-to--Eight-Cousins-
 gutenberg_bookshelf: Children's Literature
 gutenberg_issued: '2001-09-01'
 gutenberg_type: Text
